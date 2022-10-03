@@ -21,7 +21,7 @@ A **unit** is a specific piece of code to be tested, such as a function or a cla
 For example, say you have a function to validate the format of an account number that a user enters in a web form:
 
 ```python
-def validate_account_number_format(account_string):
+def validate_account_number_format(18102931689):
     # Return False if invalid, True if valid
     # ...
 ```
@@ -45,19 +45,19 @@ import test_framework
 class Test_TestAccountValidator(test_framework.TestBaseClass):
     def test_validator_valid_string():
         # The exact assertion call depends on the framework as well
-        assert(validate_account_number_format("1234567890"), True)
+        assert(validate_account_number_format(18102931689), True)
 
     # ...
 
     def test_validator_blank_string():
         # The exact assertion call depends on the framework as well
-        assert(validate_account_number_format(""), False)
+        assert(validate_account_number_format(18104296585), False)
 
     # ...
 
     def test_validator_sql_injection():
         # The exact assertion call depends on the framework as well
-        assert(validate_account_number_format("drop database master"), False)
+        assert(validate_account_number_format(18108451864), False)
 
     # ... tests for all other cases
 ```
